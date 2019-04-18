@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hGY-6f-pja">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Merge Video WIth Animation-->
+        <scene sceneID="cSH-jw-TNQ">
+            <objects>
+                <viewController id="iPh-K3-BCE" customClass="MergeWithTransitionVideoVC" customModule="VideoMerger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b3V-qe-ten">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg5" translatesAutoresizingMaskIntoConstraints="NO" id="2T6-jL-mnM">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhN-VT-Nc7">
+                                <rect key="frame" x="10" y="110" width="140" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39563476460000002" blue="0.25027065590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CK2-dU-c27"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Load Video 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetOne:" destination="iPh-K3-BCE" eventType="touchUpInside" id="gAV-qC-lVF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIX-bm-kuD">
+                                <rect key="frame" x="10" y="280" width="140" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39563476460000002" blue="0.25027065590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yXa-8b-E1j"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Load Video 2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetTwo:" destination="iPh-K3-BCE" eventType="touchUpInside" id="fcY-xh-Mf1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoPlayerAdd" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-4G-i6J">
+                                <rect key="frame" x="160" y="60" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="bj2-13-G90"/>
+                                    <constraint firstAttribute="width" constant="150" id="mMX-qY-XH7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoPlayerAdd" translatesAutoresizingMaskIntoConstraints="NO" id="vSh-vG-ITz">
+                                <rect key="frame" x="160" y="230" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Aw3-eg-c2d"/>
+                                    <constraint firstAttribute="height" constant="150" id="v1z-Sb-Qx9"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jlb-tK-vWd">
+                                <rect key="frame" x="135" y="259" width="50" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="mzM-lW-0Fh"/>
+                                    <constraint firstAttribute="height" constant="50" id="ql3-iT-VDG"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssp-1f-QGJ">
+                                <rect key="frame" x="84.5" y="430" width="151" height="50"/>
+                                <color key="backgroundColor" red="0.80380587879999998" green="1" blue="0.1988399659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pnM-Jh-W8a"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Merge and Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mergeWithAnimation:" destination="iPh-K3-BCE" eventType="touchUpInside" id="IXa-fX-804"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ssp-1f-QGJ" firstAttribute="top" secondItem="vSh-vG-ITz" secondAttribute="bottom" constant="50" id="49N-m4-Nbb"/>
+                            <constraint firstItem="Heq-n1-61h" firstAttribute="bottom" secondItem="2T6-jL-mnM" secondAttribute="bottom" id="B88-xU-AW6"/>
+                            <constraint firstItem="JxE-4G-i6J" firstAttribute="trailing" secondItem="Heq-n1-61h" secondAttribute="trailing" constant="-10" id="Fms-eB-yPW"/>
+                            <constraint firstItem="JxE-4G-i6J" firstAttribute="top" secondItem="Heq-n1-61h" secondAttribute="top" constant="40" id="Gww-Bc-C6h"/>
+                            <constraint firstItem="Ssp-1f-QGJ" firstAttribute="centerX" secondItem="b3V-qe-ten" secondAttribute="centerX" id="Kxo-Fw-hyw"/>
+                            <constraint firstItem="JxE-4G-i6J" firstAttribute="leading" secondItem="fhN-VT-Nc7" secondAttribute="trailing" constant="10" id="MPO-k2-k3R"/>
+                            <constraint firstItem="2T6-jL-mnM" firstAttribute="leading" secondItem="Heq-n1-61h" secondAttribute="leading" id="NOe-Rk-YvD"/>
+                            <constraint firstItem="2T6-jL-mnM" firstAttribute="trailing" secondItem="Heq-n1-61h" secondAttribute="trailing" id="YgR-iR-yzb"/>
+                            <constraint firstItem="YIX-bm-kuD" firstAttribute="centerY" secondItem="vSh-vG-ITz" secondAttribute="centerY" id="cuR-pR-5yf"/>
+                            <constraint firstItem="vSh-vG-ITz" firstAttribute="top" secondItem="JxE-4G-i6J" secondAttribute="bottom" constant="20" id="ebU-2v-t61"/>
+                            <constraint firstItem="vSh-vG-ITz" firstAttribute="trailing" secondItem="Heq-n1-61h" secondAttribute="trailing" constant="-10" id="elV-18-f8b"/>
+                            <constraint firstItem="jlb-tK-vWd" firstAttribute="centerX" secondItem="b3V-qe-ten" secondAttribute="centerX" id="hrj-cu-FUX"/>
+                            <constraint firstItem="jlb-tK-vWd" firstAttribute="centerY" secondItem="b3V-qe-ten" secondAttribute="centerY" id="qe7-sF-OVQ"/>
+                            <constraint firstItem="2T6-jL-mnM" firstAttribute="top" secondItem="Heq-n1-61h" secondAttribute="top" id="r3H-7K-UmT"/>
+                            <constraint firstItem="vSh-vG-ITz" firstAttribute="leading" secondItem="YIX-bm-kuD" secondAttribute="trailing" constant="10" id="sE6-LY-TDN"/>
+                            <constraint firstItem="fhN-VT-Nc7" firstAttribute="leading" secondItem="Heq-n1-61h" secondAttribute="leading" constant="10" id="tm1-5i-lPu"/>
+                            <constraint firstItem="fhN-VT-Nc7" firstAttribute="centerY" secondItem="JxE-4G-i6J" secondAttribute="centerY" id="vuo-5P-PZu"/>
+                            <constraint firstItem="YIX-bm-kuD" firstAttribute="leading" secondItem="Heq-n1-61h" secondAttribute="leading" constant="10" id="zX3-mu-GYG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Heq-n1-61h"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Merge Video WIth Animation" image="mergedWithAnimation" id="gNe-Dp-GBC"/>
+                    <connections>
+                        <outlet property="activityMonitor" destination="jlb-tK-vWd" id="8gH-iT-7W3"/>
+                        <outlet property="btnLoadVideo1" destination="fhN-VT-Nc7" id="pdg-Bm-9Xb"/>
+                        <outlet property="btnLoadVideo2" destination="YIX-bm-kuD" id="CbJ-xL-imw"/>
+                        <outlet property="btnMerge" destination="Ssp-1f-QGJ" id="ucy-ME-GvL"/>
+                        <outlet property="thumbImageViewFirst" destination="JxE-4G-i6J" id="9XH-1u-63f"/>
+                        <outlet property="thumbImageViewSecond" destination="vSh-vG-ITz" id="7Kz-zG-K9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APg-xu-cZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1415.625" y="590.49295774647885"/>
+        </scene>
+        <!--Merge Video-->
+        <scene sceneID="xHs-Co-WaT">
+            <objects>
+                <viewController id="cq5-w0-gIj" customClass="MergeVideoVC" customModule="VideoMerger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJM-U3-HfH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg5" translatesAutoresizingMaskIntoConstraints="NO" id="3xb-Ob-GC4">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGe-Lv-gcH">
+                                <rect key="frame" x="10" y="110" width="140" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39563476460000002" blue="0.25027065590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DF3-zX-fI3"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Load Video 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetOne:" destination="cq5-w0-gIj" eventType="touchUpInside" id="3p4-KJ-J7A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smO-uL-0b1">
+                                <rect key="frame" x="10" y="280" width="140" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39563476460000002" blue="0.25027065590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ruz-I8-Uhz"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Load Video 2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetTwo:" destination="cq5-w0-gIj" eventType="touchUpInside" id="Eov-dB-Hak"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoPlayerAdd" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-f9-5RA">
+                                <rect key="frame" x="160" y="60" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="DG1-z7-flV"/>
+                                    <constraint firstAttribute="width" constant="150" id="bBy-yb-xfy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoPlayerAdd" translatesAutoresizingMaskIntoConstraints="NO" id="wGc-Fh-Qbq">
+                                <rect key="frame" x="160" y="230" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="EOE-16-7lv"/>
+                                    <constraint firstAttribute="width" constant="150" id="nbf-mk-cSv"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aWt-yv-vgE">
+                                <rect key="frame" x="135" y="259" width="50" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="NZY-mJ-agq"/>
+                                    <constraint firstAttribute="height" constant="50" id="PRm-Oc-Rqh"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ0-SM-kjR">
+                                <rect key="frame" x="84.5" y="430" width="151" height="50"/>
+                                <color key="backgroundColor" red="0.80380587879999998" green="1" blue="0.1988399659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mi9-Q6-Qye"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Merge and Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mergeWithAnimation:" destination="cq5-w0-gIj" eventType="touchUpInside" id="twN-xY-egj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ye8-f9-5RA" firstAttribute="trailing" secondItem="POv-QE-bpR" secondAttribute="trailing" constant="-10" id="060-lb-wo5"/>
+                            <constraint firstItem="wGc-Fh-Qbq" firstAttribute="top" secondItem="ye8-f9-5RA" secondAttribute="bottom" constant="20" id="4wW-0Z-SuH"/>
+                            <constraint firstItem="3xb-Ob-GC4" firstAttribute="leading" secondItem="POv-QE-bpR" secondAttribute="leading" id="9Yc-kF-ggx"/>
+                            <constraint firstItem="ye8-f9-5RA" firstAttribute="leading" secondItem="jGe-Lv-gcH" secondAttribute="trailing" constant="10" id="IDu-2Q-Ij8"/>
+                            <constraint firstItem="jGe-Lv-gcH" firstAttribute="leading" secondItem="POv-QE-bpR" secondAttribute="leading" constant="10" id="K91-TA-ZhA"/>
+                            <constraint firstItem="smO-uL-0b1" firstAttribute="leading" secondItem="POv-QE-bpR" secondAttribute="leading" constant="10" id="MEx-ju-MCz"/>
+                            <constraint firstItem="aJ0-SM-kjR" firstAttribute="top" secondItem="wGc-Fh-Qbq" secondAttribute="bottom" constant="50" id="PsI-Qt-GAy"/>
+                            <constraint firstItem="wGc-Fh-Qbq" firstAttribute="leading" secondItem="smO-uL-0b1" secondAttribute="trailing" constant="10" id="Riu-OW-sgc"/>
+                            <constraint firstItem="aWt-yv-vgE" firstAttribute="centerY" secondItem="CJM-U3-HfH" secondAttribute="centerY" id="TM7-dh-DUT"/>
+                            <constraint firstItem="wGc-Fh-Qbq" firstAttribute="trailing" secondItem="POv-QE-bpR" secondAttribute="trailing" constant="-10" id="XIz-hC-tCL"/>
+                            <constraint firstItem="3xb-Ob-GC4" firstAttribute="trailing" secondItem="POv-QE-bpR" secondAttribute="trailing" id="ZHn-1b-Uhj"/>
+                            <constraint firstItem="jGe-Lv-gcH" firstAttribute="centerY" secondItem="ye8-f9-5RA" secondAttribute="centerY" id="aVv-7X-XyF"/>
+                            <constraint firstItem="aJ0-SM-kjR" firstAttribute="centerX" secondItem="CJM-U3-HfH" secondAttribute="centerX" id="d1Y-aa-QDr"/>
+                            <constraint firstItem="aWt-yv-vgE" firstAttribute="centerX" secondItem="CJM-U3-HfH" secondAttribute="centerX" id="dBT-tk-QBQ"/>
+                            <constraint firstItem="3xb-Ob-GC4" firstAttribute="top" secondItem="POv-QE-bpR" secondAttribute="top" id="gs4-u1-6ra"/>
+                            <constraint firstItem="ye8-f9-5RA" firstAttribute="top" secondItem="POv-QE-bpR" secondAttribute="top" constant="40" id="gsc-2e-z1x"/>
+                            <constraint firstItem="smO-uL-0b1" firstAttribute="centerY" secondItem="wGc-Fh-Qbq" secondAttribute="centerY" id="m9n-Y5-jEf"/>
+                            <constraint firstItem="POv-QE-bpR" firstAttribute="bottom" secondItem="3xb-Ob-GC4" secondAttribute="bottom" id="t3c-X8-etX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="POv-QE-bpR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Merge Video" image="mergedWithoutAnimation" id="5HN-YH-do5"/>
+                    <connections>
+                        <outlet property="activityMonitor" destination="aWt-yv-vgE" id="6Ua-cy-15j"/>
+                        <outlet property="btnLoadVideo1" destination="jGe-Lv-gcH" id="m4V-rc-wky"/>
+                        <outlet property="btnLoadVideo2" destination="smO-uL-0b1" id="eS2-4W-kRg"/>
+                        <outlet property="btnMerge" destination="aJ0-SM-kjR" id="rv3-z1-x24"/>
+                        <outlet property="thumbImageViewFirst" destination="ye8-f9-5RA" id="I8J-xA-pEJ"/>
+                        <outlet property="thumbImageViewSecond" destination="wGc-Fh-Qbq" id="7Jl-IV-Fmw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ2-C5-mdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2178.75" y="591.54929577464793"/>
+        </scene>
+        <!--Play Video-->
+        <scene sceneID="hOo-aM-JPh">
+            <objects>
+                <viewController storyboardIdentifier="PlayVideoVC" id="9gb-vE-qbh" customClass="PlayVideoVC" customModule="VideoMerger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ezM-Hs-ezt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg5" translatesAutoresizingMaskIntoConstraints="NO" id="YMW-OH-AxA">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52l-2c-Obq">
+                                <rect key="frame" x="70" y="259" width="180" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39563476460000002" blue="0.25027065590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Elg-8J-kVe"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Select Video To Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="9gb-vE-qbh" eventType="touchUpInside" id="3ZI-8u-VHb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="52l-2c-Obq" firstAttribute="centerY" secondItem="ezM-Hs-ezt" secondAttribute="centerY" id="Uhn-ew-LUu"/>
+                            <constraint firstItem="52l-2c-Obq" firstAttribute="centerX" secondItem="ezM-Hs-ezt" secondAttribute="centerX" id="VrK-N0-fsB"/>
+                            <constraint firstItem="wbB-5N-ase" firstAttribute="bottom" secondItem="YMW-OH-AxA" secondAttribute="bottom" id="Z1F-BA-U8S"/>
+                            <constraint firstItem="YMW-OH-AxA" firstAttribute="top" secondItem="wbB-5N-ase" secondAttribute="top" id="iEg-fd-rbL"/>
+                            <constraint firstItem="YMW-OH-AxA" firstAttribute="leading" secondItem="wbB-5N-ase" secondAttribute="leading" id="ny3-lY-rcp"/>
+                            <constraint firstItem="wbB-5N-ase" firstAttribute="trailing" secondItem="YMW-OH-AxA" secondAttribute="trailing" id="vrk-3f-bej"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wbB-5N-ase"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Play Video" image="play" id="Dec-nl-gfx"/>
+                    <connections>
+                        <outlet property="btnplayVideo" destination="52l-2c-Obq" id="yQm-DA-Pon"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGc-vo-1zs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="-567"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yfi-2y-CrE">
+            <objects>
+                <tabBarController id="hGY-6f-pja" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7eM-nt-9Xf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9gb-vE-qbh" kind="relationship" relationship="viewControllers" id="Ghu-fF-ZVH"/>
+                        <segue destination="iPh-K3-BCE" kind="relationship" relationship="viewControllers" id="rXe-cm-Gdh"/>
+                        <segue destination="cq5-w0-gIj" kind="relationship" relationship="viewControllers" id="DEd-YA-xCj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMf-aw-utc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1414" y="-235"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bg5" width="358" height="575"/>
+        <image name="mergedWithAnimation" width="25" height="25"/>
+        <image name="mergedWithoutAnimation" width="25" height="25"/>
+        <image name="play" width="25" height="25"/>
+        <image name="videoPlayerAdd" width="150" height="150"/>
+    </resources>
+</document>
